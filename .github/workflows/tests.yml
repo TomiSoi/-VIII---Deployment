@@ -21,9 +21,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        continue-on-error: true
 
       - name: Run tests with coverage
         run: npm test
+        
 
       - name: Upload coverage to Coveralls
         run: npx coveralls < coverage/lcov.info
